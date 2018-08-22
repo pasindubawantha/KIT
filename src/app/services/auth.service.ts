@@ -1,15 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Injectable()
 export class AuthService {
   authToken: any;
   user: any;
-
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(public af: AngularFire) { }
+  loginWithGoogle() {
+    return this.af.auth.login({
+      provider: AuthProviders.EmailAuthProvider,
+      method: AuthMethods.Popup
+    });
+  }
+  logout() {
+    return this.af.auth.logout();
+  }
+  //constructor(private auth: AngularFireAuthModule, private router: Router, private db: AngularFireDatabaseModule) {}
 
   // loggedIn() {
   //   const browser_token = sessionStorage.getItem('id_token');
