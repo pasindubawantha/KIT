@@ -1,64 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>KIT</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/logo/kit.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <!-- <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-
-  <!-- Libraries CSS Files -->
-  <!-- <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet"> -->
-
-  <!-- Bootstrap Core Css -->
-  <!-- <link href="garage-web/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"> -->
-
-  <!-- Waves Effect Css -->
-  <!-- <link href="garage-web/plugins/node-waves/waves.css" rel="stylesheet" /> -->
-
-  <!-- Animation Css -->
-  <!-- <link href="garage-web/plugins/animate-css/animate.css" rel="stylesheet" /> -->
-
-  <!-- Custom Css -->
-  <link href="garage-web/css/style.css" rel="stylesheet">
-
-  <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-  <link href="garage-web/css/themes/all-themes.css" rel="stylesheet" />
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: Avilon
-    Theme URL: https://bootstrapmade.com/avilon-bootstrap-landing-page-template/
-    Author: BootstrapMade.com
-    License: https://bootstrapmade.com/license/
-  ======================================================= -->
-</head>
-
-<body>
-
   <!--==========================
     Header
   ============================-->
+
   <header id="header">
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto"><img src="img/logo/kit.png" alt="" height="34" width="34"></a></h1>
+        <h1><a href="#intro" class="scrollto"><img src="assets/img/logo/kit.png" alt="" height="34" width="34"></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title=""></a> -->
       </div>
@@ -94,15 +42,15 @@
     <div class="product-screens">
 
       <div class="product-screen-1 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.6s">
-        <img src="img/1.jpg" alt="" height="600" width="314">
+        <img src="assets/img/1.jpg" alt="" height="600" width="314">
       </div>
 
       <div class="product-screen-2 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.6s">
-        <img src="img/2.jpg" alt="" height="600" width="314">
+        <img src="assets/img/2.jpg" alt="" height="600" width="314">
       </div>
 
       <div class="product-screen-3 wow fadeInUp" data-wow-duration="0.6s">
-        <img src="img/8.jpg" alt="" height="600" width="314">
+        <img src="assets/img/8.jpg" alt="" height="600" width="314">
       </div>
 
     </div>
@@ -111,7 +59,7 @@
 
   <main id="main">
 
-    <!--==========================
+ <!--==========================
       About Us Section
     ============================-->
     <section id="about" class="section-bg">
@@ -127,7 +75,7 @@
 
         <div class="row">
           <div class="col-lg-6 about-img wow fadeInLeft">
-            <img src="img/about-img-kit.jpg.png" alt="">
+            <img src="assets/img/about-img-kit.jpg.png" alt="">
           </div>
 
           <div class="col-lg-6 content wow fadeInRight">
@@ -157,7 +105,7 @@
       </div>
     </section><!-- #about -->
 
-    <!--==========================
+  <!--==========================
       Product Featuress Section
     ============================-->
     <section id="features">
@@ -165,7 +113,7 @@
 
         <div class="row">
 
-          <div class="col-lg-8 offset-lg-4">
+          <!-- <div class="col-lg-8 offset-lg-4">
             <div class="section-header wow fadeIn" data-wow-duration="1s">
               <h3 class="section-title">Product Featuress</h3>
               <span class="section-divider"></span>
@@ -209,7 +157,7 @@
               </div>
             </div>
 
-          </div>
+          </div> -->
 
         </div>
 
@@ -220,47 +168,11 @@
     <!--==========================
       Compatibility Section
     ============================-->
-    <?php
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "kitwebapp";
-
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-
-//mysqli_close($conn);
-?>
-
 
     <section id="compatibility">
       <div class="container">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-left">
-            <?php
-                if (isset($_GET["model"])) {
-                  $model = $_GET["model"];
-                  $sql = "SELECT * FROM `vehicle` WHERE model = '".$model."'";
-                  $result = mysqli_query($conn, $sql);
-                  if (mysqli_num_rows($result) > 0) {
-                      while($row = mysqli_fetch_assoc($result)) {
-                        if($row["compatibility"] == "0"){
-                          echo '<h3 class="cta-title">Sorry model '.$model.' is not compatible!</h3>';
-                        }else{
-                          echo '<h3 class="cta-title">Model '.$model.' is compatible!</h3>';
-                        }
-                      }
-                  }
-              }else{
-                echo '<h3 class="cta-title">Check Compatibility</h3>';
-              }
-            ?>
 
             <p class="cta-text"> Select your Vehicle.</p>
             <p class="cta-text"> If your car is manufactured after January 1st 1996, then your Car is probably OBD II Compliant.</p>
@@ -269,40 +181,13 @@ if (!$conn) {
             <div class="dropdown show">
               <!-- Button trigger modal -->
               <a role="button" class="btn cta-btn align-middle" data-toggle="modal" data-target="#checkCompatibility">Check Compatibility</a>
-              <!-- <a class="btn dropdown-toggle cta-btn align-middle" href="#" role="button" id="dropdownBrand" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
-              <?php
-                if (isset($_GET["brand"])) {
-                    $brand = $_GET["brand"];
-                    echo "Choose a Model";
-                    echo '</a><div class="dropdown-menu" aria-labelledby="dropdownBrand">';
-                    $sql = "SELECT * FROM `vehicle` WHERE brand = '".$brand."'";
-                    $result = mysqli_query($conn, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo '<a class="dropdown-item" href="./index.php?model='.$row["model"].'">'.$row["model"].'</a>';
-                        }
-                    }
-                }else{
-                    echo "Choose a Brand";
-                    echo '</a><div class="dropdown-menu" aria-labelledby="dropdownBrand">';
-                    $sql = "SELECT * FROM `vehicle` GROUP BY brand";
-                    $result = mysqli_query($conn, $sql);
-                    if (mysqli_num_rows($result) > 0) {
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo '<a class="dropdown-item" href="./index.php?brand='.$row["brand"].'">'.$row["brand"].'</a>';
-                        }
-                    }
-                }
 
-              ?> -->
               </div>
               <!-- <a class="cta-btn align-middle" href="#">Check Compatibility</a> -->
             </div>
           </div>
 
         </div>
-
-      </div>
     </section><!-- #compatibility -->
 
 
@@ -320,7 +205,7 @@ if (!$conn) {
           <div class="modal-body">
             <div class="btn-group">
                 <button type="button" class="btn bg-cyan dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Select your Vehicle's Brand </span>
+                    Select your Vehicle's Brand
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="javascript:void(0);">Action</a></li>
@@ -333,7 +218,7 @@ if (!$conn) {
             <br/><br/>
             <div class="btn-group">
                 <button type="button" class="btn bg-cyan dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Select your Vehicle's Model </span>
+                    Select your Vehicle's Model
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="javascript:void(0);">Action</a></li>
@@ -364,7 +249,7 @@ if (!$conn) {
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="img/advanced-feature-1.jpg" alt="">
+              <img class="advanced-feature-img-right wow fadeInRight" src="assets/img/advanced-feature-1.jpg" alt="">
               <div class="wow fadeInLeft">
                 <h2>Garage Finder</h2>
                 <h3>Identify the most suitable garage</h3>
@@ -384,7 +269,7 @@ if (!$conn) {
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <img class="advanced-feature-img-left" src="img/advanced-feature-2.jpg" alt="">
+              <img class="advanced-feature-img-left" src="assets/img/advanced-feature-2.jpg" alt="">
               <div class="wow fadeInRight">
                 <h2>Real Time Vehicle Data</h2>
                 <i class="ion-ios-paper-outline" class="wow fadeInRight" data-wow-duration="0.5s"></i>
@@ -403,7 +288,7 @@ if (!$conn) {
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="img/advanced-feature-3.jpg" alt="">
+              <img class="advanced-feature-img-right wow fadeInRight" src="assets/img/advanced-feature-3.jpg" alt="">
               <div class="wow fadeInLeft">
                 <h2>Warning Critical Alerts & Scheduler</h2>
                 <p>Another problem drivers come across is they cannot easily keep track of when to change oil, how’s the condition of your engine, Schedule periodical services, Keep track of oil, water and other lubricant changes/refills &
@@ -503,42 +388,6 @@ keeping track of license, insurance due dates and lease installments.
       </div>
     </section><!-- #more-features -->
 
-    <!--==========================
-      Clients
-    ============================-->
-    <!-- <section id="clients">
-      <div class="container">
-
-        <div class="row wow fadeInUp">
-
-          <div class="col-md-2">
-            <img src="img/clients/client-1.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-2.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-3.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-4.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-5.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-6.png" alt="">
-          </div>
-
-        </div>
-      </div>
-    </section> -->
-    <!-- #more-features -->
 
     <!--==========================
       Pricing Section
@@ -557,7 +406,7 @@ keeping track of license, insurance due dates and lease installments.
           <div class="col-lg-4 col-md-6">
             <div class="box wow fadeInLeft">
               <h3>Panlong Bluetooth OBD II Scanner Adapter</h3>
-              <img src="img/adapters/adapter-5.png" height="128" width="128">
+              <img src="assets/img/adapters/adapter-5.png" height="128" width="128">
               <h4><sup>$</sup>10.98</h4>
               <!-- <ul>
                 <li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>
@@ -573,7 +422,7 @@ keeping track of license, insurance due dates and lease installments.
           <div class="col-lg-4 col-md-6">
             <div class="box featured wow fadeInUp">
               <h3>Kitbest Bluetooth OBD II Scanner Adapter</h3>
-              <img src="img/adapters/adapter-4.png" height="128" width="128">
+              <img src="assets/img/adapters/adapter-4.png" height="128" width="128">
               <h4><sup>$</sup>10.97</h4>
               <!-- <ul>
                 <li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>
@@ -589,7 +438,7 @@ keeping track of license, insurance due dates and lease installments.
           <div class="col-lg-4 col-md-6">
             <div class="box wow fadeInRight">
               <h3>KOBRA Bluetooth OBD II Scanner Adapter</h3>
-              <img src="img/adapters/adapter-3.png" height="128" width="128">
+              <img src="assets/img/adapters/adapter-3.png" height="128" width="128">
               <h4><sup>$</sup>12.95</h4>
               <!-- <ul>
                 <li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>
@@ -727,7 +576,7 @@ keeping track of license, insurance due dates and lease installments.
         <div class="row wow fadeInUp">
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="img/team/suran.jpeg" alt=""></div>
+              <div class="pic"><img src="assets/img/team/suran.jpeg" alt=""></div>
               <h4>Suran Kalana</h4>
               <!-- <span>Chief Executive Officer</span> -->
               <div class="social">
@@ -743,7 +592,7 @@ keeping track of license, insurance due dates and lease installments.
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="img/team/lasitha.jpeg" alt=""></div>
+              <div class="pic"><img src="assets/img/team/lasitha.jpeg" alt=""></div>
               <h4>Lasitha Hiranjan</h4>
               <!-- <span>Product Manager</span> -->
               <div class="social">
@@ -759,7 +608,7 @@ keeping track of license, insurance due dates and lease installments.
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="img/team/supul.jpeg" alt=""></div>
+              <div class="pic"><img src="assets/img/team/supul.jpeg" alt=""></div>
               <h4>Supul Dulanka</h4>
               <!-- <span>CTO</span> -->
               <div class="social">
@@ -775,7 +624,7 @@ keeping track of license, insurance due dates and lease installments.
 
           <div class="col-lg-3 col-md-6">
             <div class="member">
-              <div class="pic"><img src="img/team/sasanka.jpeg" alt=""></div>
+              <div class="pic"><img src="assets/img/team/sasanka.jpeg" alt=""></div>
               <h4>Sasanka Sandes</h4>
               <!-- <span>Accountant</span> -->
               <div class="social">
@@ -809,7 +658,7 @@ keeping track of license, insurance due dates and lease installments.
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
               <a href="img/gallery/3.jpg" class="gallery-popup">
-                <img src="img/gallery/3.jpg" alt="">
+                <img src="assets/img/gallery/3.jpg" alt="">
               </a>
             </div>
           </div>
@@ -817,7 +666,7 @@ keeping track of license, insurance due dates and lease installments.
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
               <a href="img/gallery/4.jpg" class="gallery-popup">
-                <img src="img/gallery/4.jpg" alt="">
+                <img src="assets/img/gallery/4.jpg" alt="">
               </a>
             </div>
           </div>
@@ -825,7 +674,7 @@ keeping track of license, insurance due dates and lease installments.
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
               <a href="img/gallery/5.jpg" class="gallery-popup">
-                <img src="img/gallery/5.jpg" alt="">
+                <img src="assets/img/gallery/5.jpg" alt="">
               </a>
             </div>
           </div>
@@ -833,7 +682,7 @@ keeping track of license, insurance due dates and lease installments.
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
               <a href="img/gallery/6.jpg" class="gallery-popup">
-                <img src="img/gallery/6.jpg" alt="">
+                <img src="assets/img/gallery/6.jpg" alt="">
               </a>
             </div>
           </div>
@@ -841,7 +690,7 @@ keeping track of license, insurance due dates and lease installments.
           <div class="col-lg-4 col-md-6">
             <div class="gallery-item wow fadeInUp">
               <a href="img/gallery/7.jpg" class="gallery-popup">
-                <img src="img/gallery/7.jpg" alt="">
+                <img src="assets/img/gallery/7.jpg" alt="">
               </a>
             </div>
           </div>
@@ -969,25 +818,4 @@ keeping track of license, insurance due dates and lease installments.
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-
-
-<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
-
-
-</body>
-</html>

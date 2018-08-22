@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     console.log(1);
-    this.auth.signup("asd" , "asd");
+    this.auth.signup("test.email7@gmail.com" , "1234567");
   }
 
 }

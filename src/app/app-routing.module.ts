@@ -11,8 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 const routes: Routes = [
-  {path: '',   redirectTo: '/home', pathMatch: 'full' },
-  // {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+   // {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   // {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   // {path: 'services', component: ServicesComponent, canActivate: [AuthGuard]},
   // {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
@@ -21,8 +20,7 @@ const routes: Routes = [
   {path: 'services', component: ServicesComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'login', component: LoginComponent },
-  {path: 'register', component: SignUpComponent},
-  {path: '**', component: PageNotFoundComponent}
+  {path: 'register', component: SignUpComponent}
 ];
 
 @NgModule({
