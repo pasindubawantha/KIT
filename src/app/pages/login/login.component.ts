@@ -9,10 +9,12 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
 
   constructor( private auth: AuthService) {
-    this.auth.loginWithGoogle();
+
    }
 
   ngOnInit() {
+    console.log(1);
+    this.auth.signup("asd" , "asd");
   }
 
 }
